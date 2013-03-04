@@ -4,7 +4,7 @@ require 'active_support/core_ext/string'
 module OmniKassa
   REQUEST_SETTINGS = :merchant_id, :currency_code, :transaction_reference,
     :customer_language
-  SETTINGS = REQUEST_SETTINGS + [:secret_key, :url]
+  SETTINGS = REQUEST_SETTINGS + [:secret_key, :url, :key_version]
 
   def self.config(settings)
     for setting in SETTINGS
@@ -27,6 +27,10 @@ module OmniKassa
 
   def self.url
     @@url
+  end
+
+  def self.key_version
+    @@key_version
   end
 
   # The common base class for all exceptions raised by OmniKassa
