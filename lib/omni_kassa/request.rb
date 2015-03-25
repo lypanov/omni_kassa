@@ -24,7 +24,7 @@ module OmniKassa
     end
 
     def perform
-      HTTParty.post(OmniKassa.url, query: query, ssl_version: :SSLv3).body
+      HTTParty.post(OmniKassa.url, query: query).body
     end
 
     def transaction_reference
